@@ -31,6 +31,19 @@
     ```
     mysql -u root -p
     ```
+5. [Important] Configure Table Name Consistency
+   To ensure consistent behavior of table name handling across different operating systems (especially when deploying between Windows and Linux), update the MySQL configuration to set `lower_case_table_names = 1`.
+   This setting should be added under the [mysqld] section of your MySQL configuration file (my.ini or my.cnf):
+
+   [mysqld]
+   lower_case_table_names=1
+   
+   Verify the current setting of **lower_case_table_names** in your MySQL server by running the following SQL query:
+
+   ```
+   SHOW VARIABLES LIKE 'lower_case_table_names';
+   ```
+   Note: This must be set before creating any databases or tables. Changing it afterward can cause issues with case sensitivity in table names.
 
 ***
 
