@@ -22,13 +22,19 @@ The ABDM integration is central to AMRIT’s functionality. Developers and contr
 
 ***
 
-### **3. Swymed: Telemedicine and Video Calling Integration**
+### **3. Video Conferencing Solutions**
+
+#### **Swymed**
 
 Swymed enables seamless telemedicine capabilities within the AMRIT platform, supporting video consultations between patients and healthcare providers. This is crucial for remote diagnosis and care, especially in underserved or geographically isolated regions.
 
-#### **Open Alternatives**
+#### **Jitsi-Based Video Consultations**
 
-The platform is designed to be extended to use open-source alternatives such as [Jitsi](https://jitsi.org/) or [WebRTC](https://webrtc.org/) for video calling and telemedicine functionalities. We welcome contributions and pull requests (PRs) to add support for these or other video-calling solutions to AMRIT.
+AMRIT now supports integrated telemedicine capabilities through the implementation of [Jitsi Meet](https://jitsi.org/), an open-source, self-hosted video conferencing solution. This enables secure, real-time video consultations between healthcare providers and beneficiaries, which is crucial for delivering remote care, particularly in underserved and geographically isolated regions.
+
+Jitsi Meet is currently integrated into the **ECD (Early Childhood Development)** module, allowing healthcare workers to initiate browser-based video consultations directly from the AMRIT platform. With the explicit consent of the beneficiary, a video call can be initiated to ensure ethical and informed care delivery.
+
+Additionally, the system supports recording of consultations, which can be securely stored for future reference, training, or compliance purposes. The self-hosted deployment ensures complete control over data privacy, security, and infrastructure, while maintaining a seamless and scalable video communication experience.
 
 ***
 
