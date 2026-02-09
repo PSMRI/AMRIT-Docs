@@ -12,6 +12,7 @@
       * [Milestone One (M1) - ABHA & Identity Layer](architecture/integrations/abdm-fhir-developer-intro/amrit-abdm-integration/milestone-one-m1-abha-and-identity-layer.md)
       * [Milestone Two (M2) - HIP Data Sharing](architecture/integrations/abdm-fhir-developer-intro/amrit-abdm-integration/milestone-two-m2-hip-data-sharing.md)
       * [Milestone Three (M3) - HIU Data Consumption](architecture/integrations/abdm-fhir-developer-intro/amrit-abdm-integration/milestone-three-m3-hiu-data-consumption.md)
+      * [ABDM - AMRIT Sandbox Server runbook](architecture/integrations/abdm-fhir-developer-intro/amrit-abdm-integration/abdm-amrit-sandbox-server-runbook.md)
 
 ## Developer Guide
 
