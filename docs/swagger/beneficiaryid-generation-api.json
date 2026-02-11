@@ -1,113 +1,1888 @@
 {
-    "swagger": "2.0",
-    "info": {
-        "description": "This service is used to generate unique beneficiary registration Id for new beneficiaries.",
-        "version": "1.0",
-        "title": "BeneficiaryID-Generation API",
-        "termsOfService": "Terms of service",
-        "contact": {
-            "name": "AMRIT",
-            "url": "https://psmri.github.io/PSMRI/",
-            "email": "amrit@piramalswasthya.org"
-        },
-        "license": {}
-    },
-    "host": "localhost:7078",
-    "basePath": "/",
-    "tags": [
-        {
-            "name": "version-controller",
-            "description": "Version Controller"
-        },
-        {
-            "name": "generate-beneficiary-controller",
-            "description": "Generate Beneficiary Controller"
-        }
-    ],
-    "paths": {
-        "/generateBeneficiaryController/generateBeneficiaryIDs": {
-            "post": {
-                "tags": [
-                    "generate-beneficiary-controller"
-                ],
-                "summary": "Generate beneficiary Ids",
-                "operationId": "getBeneficiaryIDsUsingPOST",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "param0",
-                        "description": "{\"benIDRequired\":\"Integer\",\"vanID\":\"Integer\"}",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "Authorization",
-                        "in": "header",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "201": {
-                        "description": "Created"
-                    },
-                    "401": {
-                        "description": "Unauthorized"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    },
-                    "404": {
-                        "description": "Not Found"
-                    }
-                }
-            }
-        },
-        "/version": {
-            "get": {
-                "tags": [
-                    "version-controller"
-                ],
-                "summary": "Version Information",
-                "operationId": "versionInformationUsingGET",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "*/*"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    },
-                    "404": {
-                        "description": "Not Found"
-                    }
-                }
-            }
-        }
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OpenAPI definition",
+    "version": "v0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:9090",
+      "description": "Generated server url"
     }
+  ],
+  "paths": {
+    "/beneficiaryIds": {
+      "get": {
+        "tags": [
+          "beneficiary-id-entity-controller"
+        ],
+        "description": "get-beneficiaryid",
+        "operationId": "getCollectionResource-beneficiaryid-get_1",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CollectionModelEntityModelBeneficiaryId"
+                }
+              },
+              "application/x-spring-data-compact+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CollectionModelEntityModelBeneficiaryId"
+                }
+              },
+              "text/uri-list": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "beneficiary-id-entity-controller"
+        ],
+        "description": "create-beneficiaryid",
+        "operationId": "postCollectionResource-beneficiaryid-post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BeneficiaryIdRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityModelBeneficiaryId"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/countBenID": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/countByProvisionedAndReserved": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_1",
+        "parameters": [
+          {
+            "name": "isprovisioned",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "isReserved",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/countByReserved": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_2",
+        "parameters": [
+          {
+            "name": "isReserved",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/countByReservedAndReservedUntilBetween": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_3",
+        "parameters": [
+          {
+            "name": "isReserved",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "fromDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/countByReservedForCountryId": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_4",
+        "parameters": [
+          {
+            "name": "countryId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/countByReservedForCountryIdAndProvisionedAndReserved": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_5",
+        "parameters": [
+          {
+            "name": "countryId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "isprovisioned",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "isReserved",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/countByReservedForDistrictId": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_6",
+        "parameters": [
+          {
+            "name": "districtId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/countByReservedForDistrictIdAndProvisionedAndReserved": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_7",
+        "parameters": [
+          {
+            "name": "districtId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "isprovisioned",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "isReserved",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/countByReservedForPSMapId": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_8",
+        "parameters": [
+          {
+            "name": "psMapId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/countByReservedForPSMapIdAndProvisionedAndReserved": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_9",
+        "parameters": [
+          {
+            "name": "psMapId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "isprovisioned",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "isReserved",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/countByReservedForPSMapIdAndReservedForCountryIdAndProvisionedAndReserved": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_10",
+        "parameters": [
+          {
+            "name": "psMapId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "countryId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "isprovisioned",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "isReserved",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/countByReservedForPSMapIdAndReservedForDistrictIdAndProvisionedAndReserved": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_11",
+        "parameters": [
+          {
+            "name": "psMapId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "districtId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "isprovisioned",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "isReserved",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/countByReservedForPSMapIdAndReservedForStateIdAndProvisionedAndReserved": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_12",
+        "parameters": [
+          {
+            "name": "psMapId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "stateId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "isprovisioned",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "isReserved",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/countByReservedForStateId": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_13",
+        "parameters": [
+          {
+            "name": "stateId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/countByReservedForStateIdAndProvisionedAndReserved": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_14",
+        "parameters": [
+          {
+            "name": "stateId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "isprovisioned",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "isReserved",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/findByCreatedDateBetween": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_15",
+        "parameters": [
+          {
+            "name": "fromDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CollectionModelEntityModelBeneficiaryId"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/findByProvisionedAndReserved": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_16",
+        "parameters": [
+          {
+            "name": "isprovisioned",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "isReserved",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CollectionModelEntityModelBeneficiaryId"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/findByReserved": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_17",
+        "parameters": [
+          {
+            "name": "isReserved",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CollectionModelEntityModelBeneficiaryId"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/findByReservedAndReservedUntilBetween": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_18",
+        "parameters": [
+          {
+            "name": "isReserved",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "fromDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CollectionModelEntityModelBeneficiaryId"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/findFirstByCreatedDateBetween": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_19",
+        "parameters": [
+          {
+            "name": "fromDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityModelBeneficiaryId"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/findFirstByProvisionedAndReserved": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_20",
+        "parameters": [
+          {
+            "name": "isprovisioned",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "isReserved",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityModelBeneficiaryId"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/search/getBenIDGenerated": {
+      "get": {
+        "tags": [
+          "beneficiary-id-search-controller"
+        ],
+        "operationId": "executeSearch-beneficiaryid-get_21",
+        "parameters": [
+          {
+            "name": "vanID",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "num",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CollectionModelEntityModelBeneficiaryId"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/beneficiaryIds/{id}": {
+      "get": {
+        "tags": [
+          "beneficiary-id-entity-controller"
+        ],
+        "description": "get-beneficiaryid",
+        "operationId": "getItemResource-beneficiaryid-get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityModelBeneficiaryId"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "beneficiary-id-entity-controller"
+        ],
+        "description": "update-beneficiaryid",
+        "operationId": "putItemResource-beneficiaryid-put",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BeneficiaryIdRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityModelBeneficiaryId"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityModelBeneficiaryId"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "beneficiary-id-entity-controller"
+        ],
+        "description": "delete-beneficiaryid",
+        "operationId": "deleteItemResource-beneficiaryid-delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "beneficiary-id-entity-controller"
+        ],
+        "description": "patch-beneficiaryid",
+        "operationId": "patchItemResource-beneficiaryid-patch",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BeneficiaryIdRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityModelBeneficiaryId"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/profile": {
+      "get": {
+        "tags": [
+          "profile-controller"
+        ],
+        "operationId": "listAllFormsOfMetadata_1",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RepresentationModelObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/profile/beneficiaryIds": {
+      "get": {
+        "tags": [
+          "profile-controller"
+        ],
+        "operationId": "descriptor_1_1_1",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/alps+json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/schema+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonSchema"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/profile/users": {
+      "get": {
+        "tags": [
+          "profile-controller"
+        ],
+        "operationId": "descriptor_1_1_2",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/alps+json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/schema+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonSchema"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": [
+          "user-entity-controller"
+        ],
+        "description": "get-user",
+        "operationId": "getCollectionResource-user-get_1",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CollectionModelEntityModelUser"
+                }
+              },
+              "application/x-spring-data-compact+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CollectionModelEntityModelUser"
+                }
+              },
+              "text/uri-list": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "user-entity-controller"
+        ],
+        "description": "create-user",
+        "operationId": "postCollectionResource-user-post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityModelUser"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/search/getUserByUserID": {
+      "get": {
+        "tags": [
+          "user-search-controller"
+        ],
+        "operationId": "executeSearch-user-get",
+        "parameters": [
+          {
+            "name": "userID",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityModelUser"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "tags": [
+          "user-entity-controller"
+        ],
+        "description": "get-user",
+        "operationId": "getItemResource-user-get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityModelUser"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "user-entity-controller"
+        ],
+        "description": "update-user",
+        "operationId": "putItemResource-user-put",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityModelUser"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityModelUser"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "user-entity-controller"
+        ],
+        "description": "delete-user",
+        "operationId": "deleteItemResource-user-delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "user-entity-controller"
+        ],
+        "description": "patch-user",
+        "operationId": "patchItemResource-user-patch",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityModelUser"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/generateBeneficiaryController/generateBeneficiaryIDs": {
+      "post": {
+        "tags": [
+          "generate-beneficiary-controller"
+        ],
+        "summary": "Generate beneficiary Ids",
+        "operationId": "getBeneficiaryIDs",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/version": {
+      "get": {
+        "tags": [
+          "version-controller"
+        ],
+        "summary": "Version Information",
+        "operationId": "versionInformation",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AbstractJsonSchemaPropertyObject": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "readOnly": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Item": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "properties": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/AbstractJsonSchemaPropertyObject"
+            }
+          },
+          "requiredProperties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "JsonSchema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "properties": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/AbstractJsonSchemaPropertyObject"
+            }
+          },
+          "requiredProperties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "definitions": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Item"
+            }
+          },
+          "type": {
+            "type": "string"
+          },
+          "$schema": {
+            "type": "string"
+          }
+        }
+      },
+      "Links": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Link"
+        }
+      },
+      "RepresentationModelObject": {
+        "type": "object",
+        "properties": {
+          "_links": {
+            "$ref": "#/components/schemas/Links"
+          }
+        }
+      },
+      "EntityModelUser": {
+        "type": "object",
+        "properties": {
+          "userName": {
+            "type": "string"
+          },
+          "deleted": {
+            "type": "boolean"
+          },
+          "_links": {
+            "$ref": "#/components/schemas/Links"
+          }
+        }
+      },
+      "CollectionModelEntityModelUser": {
+        "type": "object",
+        "properties": {
+          "_embedded": {
+            "type": "object",
+            "properties": {
+              "users": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/EntityModelUser"
+                }
+              }
+            }
+          },
+          "_links": {
+            "$ref": "#/components/schemas/Links"
+          }
+        }
+      },
+      "EntityModelBeneficiaryId": {
+        "type": "object",
+        "properties": {
+          "beneficiaryId": {
+            "type": "integer"
+          },
+          "provisioned": {
+            "type": "boolean"
+          },
+          "provisionedById": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "provisionedBy": {
+            "type": "string"
+          },
+          "provisionedOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reserved": {
+            "type": "boolean"
+          },
+          "reservedForId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reservedForName": {
+            "type": "string"
+          },
+          "reservedForCountryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reservedForCountryName": {
+            "type": "string"
+          },
+          "reservedForStateId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reservedForStateName": {
+            "type": "string"
+          },
+          "reservedForDistrictId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reservedForDistrictName": {
+            "type": "string"
+          },
+          "reservedForPSMapId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reservedForPSMapName": {
+            "type": "string"
+          },
+          "reservedById": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reservedByName": {
+            "type": "string"
+          },
+          "reservedOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reservedUntil": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "_links": {
+            "$ref": "#/components/schemas/Links"
+          }
+        }
+      },
+      "CollectionModelEntityModelBeneficiaryId": {
+        "type": "object",
+        "properties": {
+          "_embedded": {
+            "type": "object",
+            "properties": {
+              "beneficiaryIds": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/EntityModelBeneficiaryId"
+                }
+              }
+            }
+          },
+          "_links": {
+            "$ref": "#/components/schemas/Links"
+          }
+        }
+      },
+      "BeneficiaryIdRequestBody": {
+        "type": "object",
+        "properties": {
+          "benRegId": {
+            "type": "integer"
+          },
+          "beneficiaryId": {
+            "type": "integer"
+          },
+          "provisioned": {
+            "type": "boolean"
+          },
+          "provisionedById": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "provisionedBy": {
+            "type": "string"
+          },
+          "provisionedOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reserved": {
+            "type": "boolean"
+          },
+          "reservedForId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reservedForName": {
+            "type": "string"
+          },
+          "reservedForCountryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reservedForCountryName": {
+            "type": "string"
+          },
+          "reservedForStateId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reservedForStateName": {
+            "type": "string"
+          },
+          "reservedForDistrictId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reservedForDistrictName": {
+            "type": "string"
+          },
+          "reservedForPSMapId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reservedForPSMapName": {
+            "type": "string"
+          },
+          "reservedById": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reservedByName": {
+            "type": "string"
+          },
+          "reservedOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reservedUntil": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "UserRequestBody": {
+        "type": "object",
+        "properties": {
+          "userID": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "userName": {
+            "type": "string"
+          },
+          "deleted": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Link": {
+        "type": "object",
+        "properties": {
+          "href": {
+            "type": "string"
+          },
+          "hreflang": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "deprecation": {
+            "type": "string"
+          },
+          "profile": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "templated": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
 }
