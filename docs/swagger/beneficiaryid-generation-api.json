@@ -1,13 +1,27 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "OpenAPI definition",
-    "version": "v0"
+    "title": "BeneficiaryID-Generation API",
+    "description": "This service is used to generate unique beneficiary registration Id for new beneficiaries.",
+    "version": "1.0"
   },
   "servers": [
     {
-      "url": "http://localhost:9090",
-      "description": "Generated server url"
+      "url": "https://amritwprdev.piramalswasthya.org",
+      "description": "Dev"
+    },
+    {
+      "url": "https://uatamrit.piramalswasthya.org",
+      "description": "UAT"
+    },
+    {
+      "url": "https://amritdemo.piramalswasthya.org",
+      "description": "Demo"
+    }
+  ],
+  "security": [
+    {
+      "my security": []
     }
   ],
   "paths": {
@@ -1882,6 +1896,12 @@
             "type": "boolean"
           }
         }
+      }
+    },
+    "securitySchemes": {
+      "my security": {
+        "type": "http",
+        "scheme": "bearer"
       }
     }
   }
