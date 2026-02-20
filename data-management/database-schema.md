@@ -54,44 +54,44 @@ Dummy username and passwords<br>
 
 Here is the AMRIT DB Architecture diagram.
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 ## DB Tables
 
 ### Beneficiary Registration Tables
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
-
-### 104 Tables
-
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
-
 <figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
-### MMU & TM Tables
+### 104 Tables
 
 <figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
-### 1097 Tables
-
 <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+
+### MMU & TM Tables
 
 <figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
-### Inventory Tables
-
 <figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+
+### 1097 Tables
 
 <figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
+<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+
+### Inventory Tables
+
+<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+
 ### HWC Screening Tables
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;

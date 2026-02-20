@@ -19,7 +19,7 @@
 ## Developer Guide
 
 * [Codebase structure](developer-guide/codebase-structure.md)
-* [Development environment setup](developer-guide/development-environment-setup.md)
+* [Development environment setup](developer-guide/development-environment-setup/README.md)
   * [System Requirements](developer-guide/development-environment-setup/system-requirements.md)
   * [Software dependencies](developer-guide/development-environment-setup/software-dependencies.md)
   * [Installation Instructions](developer-guide/development-environment-setup/installation-instructions/README.md)
@@ -44,7 +44,7 @@
 * [Database schema](data-management/database-schema.md)
 * [Data privacy and security](data-management/data-privacy-and-security.md)
 * [Data export](data-management/data-export.md)
-* [Reporting](data-management/reporting.md)
+* [Reporting](data-management/reporting/README.md)
   * [Integrating DHIS2 with AMRIT](data-management/reporting/integrating-dhis2-with-amrit.md)
   * [Example Python Scripts](data-management/reporting/example-python-scripts.md)
 

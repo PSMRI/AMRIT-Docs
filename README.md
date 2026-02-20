@@ -47,6 +47,6 @@ We've put together some helpful guides for you to get setup with our product qui
 [api-guide.md](architecture/api-guide.md)
 {% endcontent-ref %}
 
-{% content-ref url="developer-guide/development-environment-setup.md" %}
-[development-environment-setup.md](developer-guide/development-environment-setup.md)
+{% content-ref url="developer-guide/development-environment-setup/" %}
+[development-environment-setup](developer-guide/development-environment-setup/)
 {% endcontent-ref %}

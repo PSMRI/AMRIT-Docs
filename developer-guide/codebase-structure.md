@@ -129,7 +129,7 @@ AMRIT follows a **loosely coupled architecture**, where each module functions in
 
 ### Next Steps
 
-* Explore the [**Developer Guide**](development-environment-setup.md) for setup instructions.
+* Explore the [**Developer Guide**](development-environment-setup/) for setup instructions.
 * Dive into the [**API Documentation**](../architecture/api-guide.md) for endpoint details.
 
 Happy Coding! 🎉
