@@ -2,18 +2,26 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Inventory API",
-    "description": "A microservice for the creation and management of beneficiaries.",
+    "description": "A microservice for inventory management of items, stock levels, and related operations.",
     "version": "version"
   },
   "servers": [
     {
-      "url": "http://localhost:9090",
-      "description": "Generated server url"
+      "url": "https://amritwprdev.piramalswasthya.org",
+      "description": "Dev"
+    },
+    {
+      "url": "https://uatamrit.piramalswasthya.org",
+      "description": "UAT"
+    },
+    {
+      "url": "https://amritdemo.piramalswasthya.org",
+      "description": "Demo"
     }
   ],
   "security": [
     {
-      "my security": []
+      "bearerAuth": []
     }
   ],
   "paths": {
@@ -4566,15 +4574,15 @@
           "outputMapper": {
             "$ref": "#/components/schemas/OutputMapper"
           },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
           "createdBy": {
             "type": "string"
           },
           "modifiedBy": {
             "type": "string"
-          },
-          "createdDate": {
-            "type": "string",
-            "format": "date-time"
           },
           "lastModDate": {
             "type": "string",
@@ -5848,7 +5856,7 @@
       }
     },
     "securitySchemes": {
-      "my security": {
+      "bearerAuth": {
         "type": "http",
         "scheme": "bearer"
       }
