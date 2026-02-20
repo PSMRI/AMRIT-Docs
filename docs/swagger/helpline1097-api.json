@@ -7,8 +7,16 @@
   },
   "servers": [
     {
-      "url": "http://localhost:9090",
-      "description": "Generated server url"
+      "url": "https://amritwprdev.piramalswasthya.org",
+      "description": "Dev"
+    },
+    {
+      "url": "https://uatamrit.piramalswasthya.org",
+      "description": "UAT"
+    },
+    {
+      "url": "https://amritdemo.piramalswasthya.org",
+      "description": "Demo"
     }
   ],
   "security": [
@@ -1651,6 +1659,20 @@
           }
         }
       },
+      "EntityModelUser": {
+        "type": "object",
+        "properties": {
+          "userName": {
+            "type": "string"
+          },
+          "deleted": {
+            "type": "boolean"
+          },
+          "_links": {
+            "$ref": "#/components/schemas/Links"
+          }
+        }
+      },
       "CollectionModelEntityModelUser": {
         "type": "object",
         "properties": {
@@ -1664,20 +1686,6 @@
                 }
               }
             }
-          },
-          "_links": {
-            "$ref": "#/components/schemas/Links"
-          }
-        }
-      },
-      "EntityModelUser": {
-        "type": "object",
-        "properties": {
-          "userName": {
-            "type": "string"
-          },
-          "deleted": {
-            "type": "boolean"
           },
           "_links": {
             "$ref": "#/components/schemas/Links"
