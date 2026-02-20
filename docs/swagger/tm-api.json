@@ -2,13 +2,21 @@
   "openapi": "3.0.1",
   "info": {
     "title": "TeleMedicine(TM) API",
-    "description": "A microservice for the creation and management of beneficiaries.",
-    "version": "version"
+    "description": "A microservice for TeleMedicine, providing APIs for remote healthcare consultations, patient management, and related telehealth operations.",
+    "version": "1.0.0"
   },
   "servers": [
     {
-      "url": "http://localhost:9090",
-      "description": "Generated server url"
+      "url": "https://amritwprdev.piramalswasthya.org",
+      "description": "Dev"
+    },
+    {
+      "url": "https://uatamrit.piramalswasthya.org",
+      "description": "UAT"
+    },
+    {
+      "url": "https://amritdemo.piramalswasthya.org",
+      "description": "Demo"
     }
   ],
   "security": [
