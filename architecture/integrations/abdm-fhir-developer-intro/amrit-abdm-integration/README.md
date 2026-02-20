@@ -14,7 +14,7 @@ It is structured to onboard developers quickly into the system’s architecture,
 #### Milestone One (M1) - ABHA & Identity Layer
 
 * **Focus**: Identity flows - ABHA creation, verification, and sandbox-mandated OTP-based linking.
-* **Key Achievements**:
+* **Key Features**:
   * Implemented `/generateOtp`, `/verifyOtp`, and `/createHealthID` flows.
   * Persisted ABHA identities in `t_healthid` and mappings in `m_benhealthidmapping`.
   * Implemented v0.5 OTP-based care-context linking.
@@ -29,7 +29,7 @@ It is structured to onboard developers quickly into the system’s architecture,
 #### Milestone Two (M2) - HIP Data Sharing
 
 * **Focus**: AMRIT as a **Health Information Provider (HIP) -** linking contexts, generating FHIR bundles, and sharing data.
-* **Key Achievements**:
+* **Key Features**:
   * Implemented v3 link-token flow for care-context linking.
   * Built Quartz scheduler pipeline to generate FHIR bundles.
   * Persisted bundles in Mongo (`Amrit_Resource`) for replay.
@@ -44,7 +44,7 @@ It is structured to onboard developers quickly into the system’s architecture,
 #### Milestone Three (M3) - HIU Data Consumption
 
 * **Focus**: AMRIT as a **Health Information User (HIU)** - consuming external health data securely with consent.
-* **Key Achievements**:
+* **Key Features**:
   * Implemented consent request and artefact persistence.
   * Fetched encrypted bundles from HIPs, decrypted using Vault keys.
   * Parsed and normalized bundles against NRCeS FHIR IG.
