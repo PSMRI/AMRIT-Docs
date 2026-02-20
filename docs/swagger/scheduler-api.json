@@ -2,18 +2,26 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Scheduler API",
-    "description": "A microservice for the creation and management of beneficiaries.",
-    "version": "version"
+    "description": "A microservice for scheduling and appointment management.",
+    "version": "1.0.0"
   },
   "servers": [
     {
-      "url": "http://localhost:9090",
-      "description": "Generated server url"
+      "url": "https://amritwprdev.piramalswasthya.org",
+      "description": "Dev"
+    },
+    {
+      "url": "https://uatamrit.piramalswasthya.org",
+      "description": "UAT"
+    },
+    {
+      "url": "https://amritdemo.piramalswasthya.org",
+      "description": "Demo"
     }
   ],
   "security": [
     {
-      "my security": []
+      "bearerAuth": []
     }
   ],
   "paths": {
@@ -771,7 +779,7 @@
       }
     },
     "securitySchemes": {
-      "my security": {
+      "bearerAuth": {
         "type": "http",
         "scheme": "bearer"
       }
