@@ -2,17 +2,18 @@
 
 ### Building From Source
 
-The API microservices are built on Java, Spring boot framework and MySQL DB.
+The API microservices are built on Java, Spring boot framework and MySQL Database.
 
 #### Pre-requisites
 
 * JDK 17 LTS
-* Spring Tool Suite 3 / Eclipse / Visual Studio / IntelliJ IDE
+* Spring Tool Suite 3 / Eclipse / Visual Studio Code/ IntelliJ IDE
 * Maven (if not pre-installed with the editor)
 * Redis
 * MySQL  8.0 and MySQL Workbench
+* Copy `src/main/environment/<module>_example.properties` to `src/main/environment/<module>_local.properties` and edit the file accordingly.
 
-### Through CLI
+### Command Line
 To build and run your Maven project, open the CLI.
    * Navigate to your project directory using the `cd` command.
    * Use the Maven command `mvn clean install` to build your project.
@@ -20,10 +21,9 @@ To build and run your Maven project, open the CLI.
    * Once the run is complete, load `http://localhost:{PORT}/swagger-ui.html#!/`, where PORT is defined in the [AMRIT documentation](https://github.com/PSMRI/AMRIT/blob/main/README.md).
 
 
+### STS/Eclipse
+#### Create Build Configuration
 
-#### Creating a build configuration in STS / Eclipse
-
-* You can copy `common_example.properties` to `common_local.properties` and edit the file accordingly. The file is under `src/main/environment` folder.
 * In your editor, click on Run -> Run configuration.
 * Double-click on Maven build and give a suitable name for the new configuration.
 * Populate the base directory by clicking on workspace and selecting the API module.
@@ -38,7 +38,7 @@ To build and run your Maven project, open the CLI.
 * It is advisable to have a personal environment properties file under src/main/environment filling out all the placeholders to avoid repetitive manual work each time you run locally.
 * Click Run to run the build configuration.
 
-#### Creating a run configuration in STS / Eclipse
+#### Create Run Configuration
 
 * In your editor, click on Run -> Run configuration.
 * Double-click on Spring Boot App(in STS) / Java Application(in Eclipse) and give a suitable name for the new configuration.
@@ -46,7 +46,8 @@ To build and run your Maven project, open the CLI.
 * Click Run to run the configuration. Keep the Redis server open during this run.
 * Once the run is complete, load `http://localhost:{PORT}/swagger-ui.html#!/`, where PORT is defined in the [AMRIT documentation](https://github.com/PSMRI/AMRIT/blob/main/README.md).
 
-#### How to Import, Build, and Run Maven Code in Visual Studio Code
+
+### Visual Studio Code
 
 1. **Install Visual Studio Code**: Download and install [Visual Studio Code](https://code.visualstudio.com/) from the official website.
 2. **Install Java** **and** **Maven**.
