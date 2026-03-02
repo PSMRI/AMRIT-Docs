@@ -24,6 +24,12 @@
       "bearerAuth": []
     }
   ],
+  "tags": [
+    {
+      "name": "Health Check",
+      "description": "APIs for checking infrastructure health status"
+    }
+  ],
   "paths": {
     "/storeTransfer": {
       "post": {
@@ -3828,14 +3834,56 @@
         "tags": [
           "version-controller"
         ],
+        "summary": "Get version information",
         "operationId": "versionInformation",
         "responses": {
           "200": {
             "description": "OK",
             "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "tags": [
+          "Health Check"
+        ],
+        "summary": "Check infrastructure health",
+        "description": "Returns the health status of MySQL, Redis, and other configured services",
+        "operationId": "checkHealth",
+        "responses": {
+          "503": {
+            "description": "One or more critical services are DOWN",
+            "content": {
               "*/*": {
                 "schema": {
-                  "type": "string"
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Services are UP or DEGRADED (operational with warnings)",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
                 }
               }
             }
@@ -4574,15 +4622,15 @@
           "outputMapper": {
             "$ref": "#/components/schemas/OutputMapper"
           },
-          "createdDate": {
-            "type": "string",
-            "format": "date-time"
-          },
           "createdBy": {
             "type": "string"
           },
           "modifiedBy": {
             "type": "string"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
           },
           "lastModDate": {
             "type": "string",
