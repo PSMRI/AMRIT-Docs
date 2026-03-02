@@ -31,6 +31,10 @@
   ],
   "tags": [
     {
+      "name": "Health Check",
+      "description": "APIs for checking infrastructure health status"
+    },
+    {
       "name": "Actuator",
       "description": "Monitor and interact",
       "externalDocs": {
@@ -88,12 +92,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -102,6 +100,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -165,12 +169,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -179,6 +177,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -242,12 +246,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -256,6 +254,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -319,12 +323,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -333,6 +331,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -405,12 +409,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -422,6 +420,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -488,12 +492,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -502,6 +500,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -565,12 +569,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -579,6 +577,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -642,12 +646,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -656,6 +654,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -719,12 +723,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -733,6 +731,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -797,12 +801,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -811,6 +809,12 @@
                   "type": "object"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -877,12 +881,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -891,6 +889,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -957,12 +961,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -971,6 +969,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -1037,12 +1041,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -1051,6 +1049,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -1114,12 +1118,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -1128,6 +1126,12 @@
                   "type": "object"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -1197,12 +1201,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -1214,6 +1212,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -1286,12 +1290,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -1303,6 +1301,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -1369,12 +1373,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -1383,6 +1381,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -1446,12 +1450,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -1460,6 +1458,12 @@
                   "type": "object"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -1526,12 +1530,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -1540,6 +1538,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -2118,12 +2122,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -2132,6 +2130,12 @@
                   "type": "object"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -2523,12 +2527,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -2537,6 +2535,12 @@
                   "type": "object"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -2600,12 +2604,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -2614,6 +2612,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -2677,12 +2681,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -2691,6 +2689,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -2754,12 +2758,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -2768,6 +2766,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -2831,12 +2835,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -2845,6 +2843,12 @@
                   "type": "object"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -2917,12 +2921,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -2934,6 +2932,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -3000,12 +3004,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -3014,6 +3012,12 @@
                   "type": "object"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -3077,12 +3081,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -3091,6 +3089,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -3154,12 +3158,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -3168,6 +3166,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -3231,12 +3235,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -3245,6 +3243,12 @@
                   "type": "object"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -3309,12 +3313,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -3323,6 +3321,12 @@
                   "type": "object"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -3387,12 +3391,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -3401,6 +3399,12 @@
                   "type": "object"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -3464,12 +3468,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -3478,6 +3476,12 @@
                   "type": "object"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -3541,12 +3545,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -3555,6 +3553,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -3706,12 +3710,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -3720,6 +3718,12 @@
                   "type": "object"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -3783,12 +3787,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -3797,6 +3795,12 @@
                   "type": "object"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -3860,12 +3864,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -3874,6 +3872,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -3940,12 +3944,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -3954,6 +3952,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -4020,12 +4024,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -4034,6 +4032,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -4097,12 +4101,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -4113,12 +4111,42 @@
               }
             }
           },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
+            }
+          },
           "400": {
             "description": "BAD_REQUEST",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/version": {
+      "get": {
+        "tags": [
+          "version-controller"
+        ],
+        "summary": "Get version information",
+        "operationId": "versionInformation",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
                 }
               }
             }
@@ -4179,12 +4207,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -4196,6 +4218,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -4267,12 +4295,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -4284,6 +4306,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -4355,12 +4383,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -4372,6 +4394,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -4443,12 +4471,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -4460,6 +4482,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -4531,12 +4559,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -4548,6 +4570,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -4613,12 +4641,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -4627,6 +4649,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -4689,12 +4717,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -4703,6 +4725,12 @@
                   "type": "string"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -4771,12 +4799,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -4788,6 +4810,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -5747,6 +5775,44 @@
         }
       }
     },
+    "/health": {
+      "get": {
+        "tags": [
+          "Health Check"
+        ],
+        "summary": "Check infrastructure health",
+        "description": "Returns the health status of MySQL, Redis, and other configured services",
+        "operationId": "checkHealth",
+        "responses": {
+          "503": {
+            "description": "One or more critical services are DOWN",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Services are UP or DEGRADED (operational with warnings)",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/gradeConfiguration/getByPSMId/{psmId}": {
       "get": {
         "tags": [
@@ -5800,12 +5866,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -5817,6 +5877,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -5890,12 +5956,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -5904,6 +5964,12 @@
                   "type": "object"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -5980,12 +6046,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -5997,6 +6057,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -6084,12 +6150,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -6101,6 +6161,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -6188,12 +6254,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -6205,6 +6265,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -6292,12 +6358,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -6309,6 +6369,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -6383,12 +6449,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -6397,6 +6457,12 @@
                   "type": "object"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -6468,12 +6534,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -6482,6 +6542,12 @@
                   "type": "object"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -6544,12 +6610,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -6558,6 +6618,12 @@
                   "type": "object"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -6629,12 +6695,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -6643,6 +6703,12 @@
                   "type": "object"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -6711,12 +6777,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -6728,6 +6788,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -6793,12 +6859,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -6807,6 +6867,12 @@
                   "$ref": "#/components/schemas/CallConfiguration"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -6917,12 +6983,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -6931,6 +6991,12 @@
                   "$ref": "#/components/schemas/ResponseEligibleCallRecordsDTO"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -7025,12 +7091,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -7039,6 +7099,12 @@
                   "$ref": "#/components/schemas/ResponseEligibleCallRecordsDTO"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -7110,12 +7176,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -7124,6 +7184,12 @@
                   "type": "object"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -7192,12 +7258,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -7209,6 +7269,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -7292,12 +7358,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -7306,6 +7366,12 @@
                   "type": "object"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -7374,12 +7440,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -7391,6 +7451,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -7455,12 +7521,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -7469,6 +7529,12 @@
                   "$ref": "#/components/schemas/CallStatisticsDTO"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -8237,12 +8303,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -8254,6 +8314,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -8334,12 +8400,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -8351,6 +8411,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -8422,12 +8488,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -8439,6 +8499,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -8510,12 +8576,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -8527,6 +8587,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -8592,12 +8658,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -8606,6 +8666,12 @@
                   "$ref": "#/components/schemas/ResponseSectionQuestionnaireMappingDTO"
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -8674,12 +8740,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -8691,6 +8751,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -8762,12 +8828,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -8779,6 +8839,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -8866,12 +8932,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -8883,6 +8943,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
@@ -8954,12 +9020,6 @@
               }
             }
           },
-          "200": {
-            "description": "SUCCESS",
-            "content": {
-              "application/json": {}
-            }
-          },
           "404": {
             "description": "NOT_FOUND",
             "content": {
@@ -8971,6 +9031,12 @@
                   }
                 }
               }
+            }
+          },
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {}
             }
           },
           "400": {
