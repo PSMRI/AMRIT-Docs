@@ -24,6 +24,12 @@
       "my security": []
     }
   ],
+  "tags": [
+    {
+      "name": "Health Check",
+      "description": "APIs for checking infrastructure health status"
+    }
+  ],
   "paths": {
     "/outreachActivities": {
       "get": {
@@ -10968,9 +10974,12 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/hal+json": {
+              "application/json": {
                 "schema": {
-                  "type": "string"
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
                 }
               }
             }
@@ -11891,6 +11900,44 @@
               "application/json": {
                 "schema": {
                   "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "tags": [
+          "Health Check"
+        ],
+        "summary": "Check infrastructure health",
+        "description": "Returns the health status of MySQL, Redis, and other configured services",
+        "operationId": "checkHealth",
+        "responses": {
+          "503": {
+            "description": "One or more critical services are DOWN",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Services are UP or DEGRADED (operational with warnings)",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
                 }
               }
             }
@@ -13046,6 +13093,242 @@
           }
         }
       },
+      "PrescriptionTemplates": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "userID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tempID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "templateName": {
+            "type": "string"
+          },
+          "drugId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "drugName": {
+            "type": "string"
+          },
+          "frequency": {
+            "type": "string"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "duration": {
+            "type": "string"
+          },
+          "instruction": {
+            "type": "string"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedDte": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "EntityModelPrescriptionTemplates": {
+        "type": "object",
+        "properties": {
+          "userID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tempID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "templateName": {
+            "type": "string"
+          },
+          "drugId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "drugName": {
+            "type": "string"
+          },
+          "frequency": {
+            "type": "string"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "duration": {
+            "type": "string"
+          },
+          "instruction": {
+            "type": "string"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedDte": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "_links": {
+            "$ref": "#/components/schemas/Links"
+          }
+        }
+      },
+      "CollectionModelEntityModelPrescriptionTemplates": {
+        "type": "object",
+        "properties": {
+          "_embedded": {
+            "type": "object",
+            "properties": {
+              "prescriptionTemplateses": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/EntityModelPrescriptionTemplates"
+                }
+              }
+            }
+          },
+          "_links": {
+            "$ref": "#/components/schemas/Links"
+          }
+        }
+      },
+      "UserActivityLogs": {
+        "type": "object",
+        "properties": {
+          "logId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "userName": {
+            "type": "string"
+          },
+          "loginType": {
+            "type": "string"
+          },
+          "option": {
+            "type": "string"
+          },
+          "logoutType": {
+            "type": "string"
+          },
+          "loginTimeStamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "logoutTimeStamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isOutOfReach": {
+            "type": "boolean"
+          },
+          "imageData": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "byte"
+            }
+          },
+          "userImage": {
+            "type": "string"
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "EntityModelUserActivityLogs": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "userName": {
+            "type": "string"
+          },
+          "loginType": {
+            "type": "string"
+          },
+          "option": {
+            "type": "string"
+          },
+          "logoutType": {
+            "type": "string"
+          },
+          "loginTimeStamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "logoutTimeStamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isOutOfReach": {
+            "type": "boolean"
+          },
+          "imageData": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "byte"
+            }
+          },
+          "userImage": {
+            "type": "string"
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "_links": {
+            "$ref": "#/components/schemas/Links"
+          }
+        }
+      },
+      "CollectionModelEntityModelUserActivityLogs": {
+        "type": "object",
+        "properties": {
+          "_embedded": {
+            "type": "object",
+            "properties": {
+              "userActivityLogses": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/EntityModelUserActivityLogs"
+                }
+              }
+            }
+          },
+          "_links": {
+            "$ref": "#/components/schemas/Links"
+          }
+        }
+      },
       "EntityModelOutreach": {
         "type": "object",
         "properties": {
@@ -13275,242 +13558,6 @@
                 "type": "array",
                 "items": {
                   "$ref": "#/components/schemas/EntityModelOutreachActivity"
-                }
-              }
-            }
-          },
-          "_links": {
-            "$ref": "#/components/schemas/Links"
-          }
-        }
-      },
-      "PrescriptionTemplates": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "userID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "tempID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "templateName": {
-            "type": "string"
-          },
-          "drugId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "drugName": {
-            "type": "string"
-          },
-          "frequency": {
-            "type": "string"
-          },
-          "unit": {
-            "type": "string"
-          },
-          "duration": {
-            "type": "string"
-          },
-          "instruction": {
-            "type": "string"
-          },
-          "createdDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "modifiedDte": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      },
-      "EntityModelPrescriptionTemplates": {
-        "type": "object",
-        "properties": {
-          "userID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "tempID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "templateName": {
-            "type": "string"
-          },
-          "drugId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "drugName": {
-            "type": "string"
-          },
-          "frequency": {
-            "type": "string"
-          },
-          "unit": {
-            "type": "string"
-          },
-          "duration": {
-            "type": "string"
-          },
-          "instruction": {
-            "type": "string"
-          },
-          "createdDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "modifiedDte": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "_links": {
-            "$ref": "#/components/schemas/Links"
-          }
-        }
-      },
-      "CollectionModelEntityModelPrescriptionTemplates": {
-        "type": "object",
-        "properties": {
-          "_embedded": {
-            "type": "object",
-            "properties": {
-              "prescriptionTemplateses": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/EntityModelPrescriptionTemplates"
-                }
-              }
-            }
-          },
-          "_links": {
-            "$ref": "#/components/schemas/Links"
-          }
-        }
-      },
-      "UserActivityLogs": {
-        "type": "object",
-        "properties": {
-          "logId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "userId": {
-            "type": "string"
-          },
-          "userName": {
-            "type": "string"
-          },
-          "loginType": {
-            "type": "string"
-          },
-          "option": {
-            "type": "string"
-          },
-          "logoutType": {
-            "type": "string"
-          },
-          "loginTimeStamp": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "logoutTimeStamp": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "isOutOfReach": {
-            "type": "boolean"
-          },
-          "imageData": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "byte"
-            }
-          },
-          "userImage": {
-            "type": "string"
-          },
-          "latitude": {
-            "type": "number",
-            "format": "double"
-          },
-          "longitude": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "EntityModelUserActivityLogs": {
-        "type": "object",
-        "properties": {
-          "userId": {
-            "type": "string"
-          },
-          "userName": {
-            "type": "string"
-          },
-          "loginType": {
-            "type": "string"
-          },
-          "option": {
-            "type": "string"
-          },
-          "logoutType": {
-            "type": "string"
-          },
-          "loginTimeStamp": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "logoutTimeStamp": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "isOutOfReach": {
-            "type": "boolean"
-          },
-          "imageData": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "byte"
-            }
-          },
-          "userImage": {
-            "type": "string"
-          },
-          "latitude": {
-            "type": "number",
-            "format": "double"
-          },
-          "longitude": {
-            "type": "number",
-            "format": "double"
-          },
-          "_links": {
-            "$ref": "#/components/schemas/Links"
-          }
-        }
-      },
-      "CollectionModelEntityModelUserActivityLogs": {
-        "type": "object",
-        "properties": {
-          "_embedded": {
-            "type": "object",
-            "properties": {
-              "userActivityLogses": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/EntityModelUserActivityLogs"
                 }
               }
             }
