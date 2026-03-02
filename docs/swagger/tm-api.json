@@ -24,6 +24,12 @@
       "my security": []
     }
   ],
+  "tags": [
+    {
+      "name": "Health Check",
+      "description": "APIs for checking infrastructure health status"
+    }
+  ],
   "paths": {
     "/user/getUserVanSpDetails": {
       "post": {
@@ -7401,9 +7407,12 @@
           "200": {
             "description": "OK",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
-                  "type": "string"
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
                 }
               }
             }
@@ -7819,6 +7828,44 @@
               "application/json": {
                 "schema": {
                   "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "tags": [
+          "Health Check"
+        ],
+        "summary": "Check infrastructure health",
+        "description": "Returns the health status of MySQL, Redis, and other configured services",
+        "operationId": "checkHealth",
+        "responses": {
+          "503": {
+            "description": "One or more critical services are DOWN",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Services are UP or DEGRADED (operational with warnings)",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
                 }
               }
             }
