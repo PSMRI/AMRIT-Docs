@@ -31,6 +31,351 @@
     }
   ],
   "paths": {
+    "/patientEligibleForResourceCreations": {
+      "get": {
+        "tags": [
+          "patient-eligible-for-resource-creation-entity-controller"
+        ],
+        "description": "get-patienteligibleforresourcecreation",
+        "operationId": "getCollectionResource-patienteligibleforresourcecreation-get_1",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CollectionModelEntityModelPatientEligibleForResourceCreation"
+                }
+              },
+              "application/x-spring-data-compact+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CollectionModelEntityModelPatientEligibleForResourceCreation"
+                }
+              },
+              "text/uri-list": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "patient-eligible-for-resource-creation-entity-controller"
+        ],
+        "description": "create-patienteligibleforresourcecreation",
+        "operationId": "postCollectionResource-patienteligibleforresourcecreation-post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientEligibleForResourceCreationRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityModelPatientEligibleForResourceCreation"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/patientEligibleForResourceCreations/search/hasLabtestsDone": {
+      "get": {
+        "tags": [
+          "patient-eligible-for-resource-creation-search-controller"
+        ],
+        "operationId": "executeSearch-patienteligibleforresourcecreation-get",
+        "parameters": [
+          {
+            "name": "visitCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/patientEligibleForResourceCreations/search/hasPhyVitals": {
+      "get": {
+        "tags": [
+          "patient-eligible-for-resource-creation-search-controller"
+        ],
+        "operationId": "executeSearch-patienteligibleforresourcecreation-get_1",
+        "parameters": [
+          {
+            "name": "visitCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/patientEligibleForResourceCreations/search/hasPrescribedDrugs": {
+      "get": {
+        "tags": [
+          "patient-eligible-for-resource-creation-search-controller"
+        ],
+        "operationId": "executeSearch-patienteligibleforresourcecreation-get_2",
+        "parameters": [
+          {
+            "name": "visitCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/patientEligibleForResourceCreations/search/hasVaccineDetails": {
+      "get": {
+        "tags": [
+          "patient-eligible-for-resource-creation-search-controller"
+        ],
+        "operationId": "executeSearch-patienteligibleforresourcecreation-get_3",
+        "parameters": [
+          {
+            "name": "visitCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/patientEligibleForResourceCreations/{id}": {
+      "get": {
+        "tags": [
+          "patient-eligible-for-resource-creation-entity-controller"
+        ],
+        "description": "get-patienteligibleforresourcecreation",
+        "operationId": "getItemResource-patienteligibleforresourcecreation-get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityModelPatientEligibleForResourceCreation"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "patient-eligible-for-resource-creation-entity-controller"
+        ],
+        "description": "update-patienteligibleforresourcecreation",
+        "operationId": "putItemResource-patienteligibleforresourcecreation-put",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientEligibleForResourceCreationRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityModelPatientEligibleForResourceCreation"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityModelPatientEligibleForResourceCreation"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "patient-eligible-for-resource-creation-entity-controller"
+        ],
+        "description": "delete-patienteligibleforresourcecreation",
+        "operationId": "deleteItemResource-patienteligibleforresourcecreation-delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "patient-eligible-for-resource-creation-entity-controller"
+        ],
+        "description": "patch-patienteligibleforresourcecreation",
+        "operationId": "patchItemResource-patienteligibleforresourcecreation-patch",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientEligibleForResourceCreationRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityModelPatientEligibleForResourceCreation"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
     "/profile": {
       "get": {
         "tags": [
@@ -51,12 +396,42 @@
         }
       }
     },
-    "/profile/users": {
+    "/profile/patientEligibleForResourceCreations": {
       "get": {
         "tags": [
           "profile-controller"
         ],
         "operationId": "descriptor_1_1_1",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/alps+json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/schema+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonSchema"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/profile/users": {
+      "get": {
+        "tags": [
+          "profile-controller"
+        ],
+        "operationId": "descriptor_1_1_2",
         "responses": {
           "200": {
             "description": "OK",
@@ -1592,6 +1967,46 @@
         }
       }
     },
+    "/careContext/linkCareContext": {
+      "post": {
+        "tags": [
+          "care-context-linking-controller"
+        ],
+        "summary": "link care context",
+        "operationId": "add",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/careContext/generateOTPForCareContext": {
       "post": {
         "tags": [
@@ -1624,6 +2039,46 @@
             "description": "OK",
             "content": {
               "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/careContext/generateCareContextToken": {
+      "post": {
+        "tags": [
+          "care-context-linking-controller"
+        ],
+        "summary": "Generate token for care context linking",
+        "operationId": "requestOtpForEnrollment",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
                 "schema": {
                   "type": "string"
                 }
@@ -1840,7 +2295,7 @@
           "create-abha-v-3-controller"
         ],
         "summary": "Generate OTP for ABHA enrollment",
-        "operationId": "requestOtpForEnrollment",
+        "operationId": "requestOtpForEnrollment_1",
         "parameters": [
           {
             "name": "Authorization",
@@ -2199,6 +2654,93 @@
           },
           "_links": {
             "$ref": "#/components/schemas/Links"
+          }
+        }
+      },
+      "EntityModelPatientEligibleForResourceCreation": {
+        "type": "object",
+        "properties": {
+          "beneficiaryRegID": {
+            "type": "integer"
+          },
+          "beneficiaryId": {
+            "type": "integer"
+          },
+          "visitReason": {
+            "type": "string"
+          },
+          "visitCategory": {
+            "type": "string"
+          },
+          "visitCode": {
+            "type": "integer"
+          },
+          "visitDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "processed": {
+            "type": "boolean"
+          },
+          "_links": {
+            "$ref": "#/components/schemas/Links"
+          }
+        }
+      },
+      "CollectionModelEntityModelPatientEligibleForResourceCreation": {
+        "type": "object",
+        "properties": {
+          "_embedded": {
+            "type": "object",
+            "properties": {
+              "patientEligibleForResourceCreations": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/EntityModelPatientEligibleForResourceCreation"
+                }
+              }
+            }
+          },
+          "_links": {
+            "$ref": "#/components/schemas/Links"
+          }
+        }
+      },
+      "PatientEligibleForResourceCreationRequestBody": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "beneficiaryRegID": {
+            "type": "integer"
+          },
+          "beneficiaryId": {
+            "type": "integer"
+          },
+          "visitReason": {
+            "type": "string"
+          },
+          "visitCategory": {
+            "type": "string"
+          },
+          "visitCode": {
+            "type": "integer"
+          },
+          "visitDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "processed": {
+            "type": "boolean"
           }
         }
       },
