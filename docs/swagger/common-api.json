@@ -8562,6 +8562,44 @@
         }
       }
     },
+    "/user/checkUserName/{userName}": {
+      "get": {
+        "tags": [
+          "iemr-admin-controller"
+        ],
+        "summary": "Get UserId based on userName",
+        "operationId": "checkUserDetails",
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/uptsu/get/facilityMaster/{providerServiceMapID}/{blockName}": {
       "get": {
         "tags": [
@@ -9527,6 +9565,14 @@
             "schema": {
               "type": "string",
               "default": "en"
+            }
+          },
+          {
+            "name": "jwttoken",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           }
         ],
