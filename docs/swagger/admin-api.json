@@ -1379,6 +1379,286 @@
         }
       }
     },
+    "/userFacilityMapping/getFacilityByMappingID": {
+      "post": {
+        "tags": [
+          "asha-supervisor-mapping-controller"
+        ],
+        "summary": "Get facility details by USR mapping ID",
+        "operationId": "getFacilityByMappingID",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/userFacilityMapping/getAshasByFacility": {
+      "post": {
+        "tags": [
+          "asha-supervisor-mapping-controller"
+        ],
+        "summary": "Get ASHA users by facility IDs",
+        "operationId": "getAshasByFacility",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/userFacilityMapping/ashaSupervisorMapping/updateAtomically": {
+      "post": {
+        "tags": [
+          "asha-supervisor-mapping-controller"
+        ],
+        "summary": "Atomically delete old and save new ASHA supervisor mappings (Fix 7)",
+        "operationId": "updateAshaSupervisorMappingAtomically",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/userFacilityMapping/ashaSupervisorMapping/save": {
+      "post": {
+        "tags": [
+          "asha-supervisor-mapping-controller"
+        ],
+        "summary": "Save ASHA supervisor mappings",
+        "operationId": "saveAshaSupervisorMapping",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/userFacilityMapping/ashaSupervisorMapping/restore": {
+      "post": {
+        "tags": [
+          "asha-supervisor-mapping-controller"
+        ],
+        "summary": "Restore soft-deleted ASHA supervisor mappings by IDs",
+        "operationId": "restoreAshaSupervisorMapping",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/userFacilityMapping/ashaSupervisorMapping/getByFacility": {
+      "post": {
+        "tags": [
+          "asha-supervisor-mapping-controller"
+        ],
+        "summary": "Get supervisor mappings by facility ID",
+        "operationId": "getSupervisorMappingByFacility",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/userFacilityMapping/ashaSupervisorMapping/delete": {
+      "post": {
+        "tags": [
+          "asha-supervisor-mapping-controller"
+        ],
+        "summary": "Delete ASHA supervisor mappings by supervisor and facility IDs",
+        "operationId": "deleteAshaSupervisorMapping",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/uptsu/submit/cdss": {
       "post": {
         "tags": [
@@ -1641,6 +1921,46 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/UpdateNodalEmailRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/updateFacilityWithHierarchy": {
+      "post": {
+        "tags": [
+          "store-controller"
+        ],
+        "summary": "Update facility with hierarchy mapping",
+        "operationId": "updateFacilityWithHierarchy",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
               }
             }
           },
@@ -9665,6 +9985,46 @@
         }
       }
     },
+    "/getVillageMappingsByFacility": {
+      "post": {
+        "tags": [
+          "store-controller"
+        ],
+        "summary": "Get village mappings for a facility",
+        "operationId": "getVillageMappingsByFacility",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/getUserRoleTM": {
       "post": {
         "tags": [
@@ -10465,6 +10825,46 @@
         }
       }
     },
+    "/getMappedVillageIDs": {
+      "post": {
+        "tags": [
+          "store-controller"
+        ],
+        "summary": "Get village IDs already mapped to facilities in a block",
+        "operationId": "getMappedVillageIDs",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/getMappedServiceLinesAndStatetoProvider": {
       "post": {
         "tags": [
@@ -10665,6 +11065,45 @@
         }
       }
     },
+    "/getItemMappingsByFacility": {
+      "post": {
+        "tags": [
+          "m-item-facility-mapping-controller"
+        ],
+        "operationId": "getItemMappingsByFacility",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/getItemFromStoreID/{storeID}": {
       "post": {
         "tags": [
@@ -10751,6 +11190,206 @@
         ],
         "summary": "Get facility",
         "operationId": "getFacility",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getFacilityTypesByState": {
+      "post": {
+        "tags": [
+          "facilitytype-controller"
+        ],
+        "summary": "Get facility types by state",
+        "operationId": "getFacilityTypesByState",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getFacilityTypesByRuralUrban": {
+      "post": {
+        "tags": [
+          "facilitytype-controller"
+        ],
+        "summary": "Get facility types by rural/urban",
+        "operationId": "getFacilityTypesByRuralUrban",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getFacilityTypesByBlock": {
+      "post": {
+        "tags": [
+          "facilitytype-controller"
+        ],
+        "summary": "Get facility types by block",
+        "operationId": "getFacilityTypesByBlock",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getFacilitiesByBlock": {
+      "post": {
+        "tags": [
+          "store-controller"
+        ],
+        "summary": "Get facilities by block/taluk",
+        "operationId": "getFacilitiesByBlock",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getFacilitiesByBlockAndLevel": {
+      "post": {
+        "tags": [
+          "store-controller"
+        ],
+        "summary": "Get facilities by block and facility level",
+        "operationId": "getFacilitiesByBlockAndLevel",
         "parameters": [
           {
             "name": "Authorization",
@@ -10911,6 +11550,46 @@
         ],
         "summary": "Get community",
         "operationId": "getCommunity",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getChildFacilitiesByParent": {
+      "post": {
+        "tags": [
+          "store-controller"
+        ],
+        "summary": "Get child facilities by parent facility ID",
+        "operationId": "getChildFacilitiesByParent",
         "parameters": [
           {
             "name": "Authorization",
@@ -11110,6 +11789,46 @@
         ],
         "summary": "Get all facility mapped data",
         "operationId": "getAllFacilityMappedData",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getAllFacilitiesByBlock": {
+      "post": {
+        "tags": [
+          "store-controller"
+        ],
+        "summary": "Get all facilities by block (including deleted)",
+        "operationId": "getAllFacilitiesByBlock",
         "parameters": [
           {
             "name": "Authorization",
@@ -13252,6 +13971,46 @@
         }
       }
     },
+    "/deleteFacilityWithHierarchy": {
+      "post": {
+        "tags": [
+          "store-controller"
+        ],
+        "summary": "Deactivate facility with hierarchy cascade (Fix 8 + Fix 19)",
+        "operationId": "deleteFacilityWithHierarchy",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/deleteDrugtype": {
       "post": {
         "tags": [
@@ -13944,6 +14703,46 @@
         }
       }
     },
+    "/createFacilityWithHierarchy": {
+      "post": {
+        "tags": [
+          "store-controller"
+        ],
+        "summary": "Create facility with hierarchy mapping",
+        "operationId": "createFacilityWithHierarchy",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/createDrugtype": {
       "post": {
         "tags": [
@@ -14437,6 +15236,46 @@
         ],
         "summary": "Check manufacturer code",
         "operationId": "checkManufacturerCode",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/checkFacilityTypeName": {
+      "post": {
+        "tags": [
+          "facilitytype-controller"
+        ],
+        "summary": "Check if facility type name exists in state",
+        "operationId": "checkFacilityTypeName",
         "parameters": [
           {
             "name": "Authorization",
@@ -16045,6 +16884,36 @@
               "format": "int32"
             }
           },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getFacilityLevels": {
+      "get": {
+        "tags": [
+          "facilitytype-controller"
+        ],
+        "summary": "Get all facility levels",
+        "operationId": "getFacilityLevels",
+        "parameters": [
           {
             "name": "Authorization",
             "in": "header",
@@ -18606,6 +19475,29 @@
           "providerServiceMapID": {
             "type": "integer",
             "format": "int32"
+          },
+          "stateID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "districtID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "blockID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "parentFacilityID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mainVillageID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ruralUrban": {
+            "type": "string"
           },
           "deleted": {
             "type": "boolean"
