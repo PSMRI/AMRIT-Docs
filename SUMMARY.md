@@ -5,6 +5,7 @@
 ## Architecture
 
 * [System architecture overview](architecture/system-architecture-overview.md)
+* [Cross-repo dependency map](architecture/cross-repo-dependency-map.md)
 * [API Guide](architecture/api-guide.md)
 * [Integrations](architecture/integrations/README.md)
   * [ABDM - FHIR Developer Intro](architecture/integrations/abdm-fhir-developer-intro/README.md)
