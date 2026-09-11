@@ -1,0 +1,475 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "FLW API",
+    "description": "FLW (Frontline Health Workers) Mobile App API module for ASHA workflows, including beneficiary management, RMNCH, TB, high-risk, death reports, and incentive services.",
+    "version": "3.1.0",
+    "contact": {
+      "name": "AMRIT",
+      "url": "https://psmri.github.io/PSMRI/",
+      "email": "amrit@piramalswasthya.org"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://amritwprdev.piramalswasthya.org",
+      "description": "Dev"
+    },
+    {
+      "url": "https://uatamrit.piramalswasthya.org",
+      "description": "UAT"
+    },
+    {
+      "url": "https://amritdemo.piramalswasthya.org",
+      "description": "Demo"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {"name": "Health Check", "description": "APIs for checking infrastructure health status"},
+    {"name": "Version", "description": "Build and version information"},
+    {"name": "Beneficiary", "description": "Beneficiary lookup for FLW workflows"},
+    {"name": "Couple", "description": "Eligible couple registration and tracking"},
+    {"name": "CBAC", "description": "Community-Based Assessment Checklist flows"},
+    {"name": "Maternal Care", "description": "Pregnancy, ANC, delivery, infant, and child care flows"},
+    {"name": "Child Care", "description": "HBYC and vaccination flows"},
+    {"name": "High Risk", "description": "High-risk assessment and tracking flows"},
+    {"name": "TB", "description": "Tuberculosis screening and suspected cases"},
+    {"name": "Death Reports", "description": "CDR and MDSR reports"},
+    {"name": "Incentive", "description": "Incentive master and user incentive data"},
+    {"name": "User", "description": "User lookup APIs"}
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": ["Health Check"],
+        "operationId": "checkHealth",
+        "responses": {
+          "200": {"description": "OK", "content": {"application/json": {"schema": {"type": "object", "additionalProperties": true}}}},
+          "503": {"description": "Service Unavailable", "content": {"application/json": {"schema": {"type": "object", "additionalProperties": true}}}}
+        }
+      }
+    },
+    "/version": {
+      "get": {
+        "tags": ["Version"],
+        "operationId": "versionInformation",
+        "responses": {
+          "200": {"description": "OK", "content": {"application/json": {"schema": {"type": "object", "additionalProperties": {"type": "string"}}}}}
+        }
+      }
+    },
+    "/beneficiary/getBeneficiaryData": {
+      "post": {
+        "tags": ["Beneficiary"],
+        "operationId": "getBeneficiaryDataByAsha",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GetBenRequestHandler"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/couple/register/saveAll": {
+      "post": {
+        "tags": ["Couple"],
+        "operationId": "saveEligibleCouple",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/EligibleCoupleDTO"}}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/couple/register/getAll": {
+      "post": {
+        "tags": ["Couple"],
+        "operationId": "getEligibleCouple",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GetBenRequestHandler"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/couple/tracking/saveAll": {
+      "post": {
+        "tags": ["Couple"],
+        "operationId": "saveEligibleCoupleTracking",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/EligibleCoupleTrackingDTO"}}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/couple/tracking/getAll": {
+      "post": {
+        "tags": ["Couple"],
+        "operationId": "getEligibleCoupleTracking",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GetBenRequestHandler"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/cbac/getAll": {
+      "post": {
+        "tags": ["CBAC"],
+        "operationId": "getAllCbacDetailsByUserId",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GetBenRequestHandler"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/cbac/saveAll": {
+      "post": {
+        "tags": ["CBAC"],
+        "operationId": "saveAllCbacDetailsByUserId",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/CbacDTO"}}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/maternalCare/pregnantWoman/saveAll": {
+      "post": {
+        "tags": ["Maternal Care"],
+        "operationId": "savePregnantWomanRegistrations",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/PregnantWomanDTO"}}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/maternalCare/pregnantWoman/getAll": {
+      "post": {
+        "tags": ["Maternal Care"],
+        "operationId": "getPregnantWomanList",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GetBenRequestHandler"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/maternalCare/ancVisit/saveAll": {
+      "post": {
+        "tags": ["Maternal Care"],
+        "operationId": "saveANCVisit",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/GenericObject"}}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/maternalCare/ancVisit/getAll": {
+      "post": {
+        "tags": ["Maternal Care"],
+        "operationId": "getANCVisitDetails",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GetBenRequestHandler"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/maternalCare/deliveryOutcome/saveAll": {
+      "post": {
+        "tags": ["Maternal Care"],
+        "operationId": "saveDeliveryOutcome",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/GenericObject"}}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/maternalCare/deliveryOutcome/getAll": {
+      "post": {
+        "tags": ["Maternal Care"],
+        "operationId": "getDeliveryOutcome",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GetBenRequestHandler"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/maternalCare/infant/saveAll": {
+      "post": {
+        "tags": ["Maternal Care"],
+        "operationId": "saveInfantList",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/GenericObject"}}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/maternalCare/infant/getAll": {
+      "post": {
+        "tags": ["Maternal Care"],
+        "operationId": "getInfantList",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GetBenRequestHandler"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/maternalCare/child/saveAll": {
+      "post": {
+        "tags": ["Maternal Care"],
+        "operationId": "saveAllChildDetails",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/GenericObject"}}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/maternalCare/child/getAll": {
+      "post": {
+        "tags": ["Maternal Care"],
+        "operationId": "getAllChildRegisterDetails",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GetBenRequestHandler"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/child-care/hbyc/saveAll": {
+      "post": {
+        "tags": ["Child Care"],
+        "operationId": "saveHBYCDetails",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/GenericObject"}}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/child-care/hbyc/getAll": {
+      "post": {
+        "tags": ["Child Care"],
+        "operationId": "getHBYCDetails",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "object", "additionalProperties": true}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/child-care/vaccination/getAll": {
+      "post": {
+        "tags": ["Child Care"],
+        "operationId": "getChildVaccinationDetailsPost",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GetBenRequestHandler"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/child-care/vaccine/getAll": {
+      "get": {
+        "tags": ["Child Care"],
+        "operationId": "getChildVaccinationDetails",
+        "parameters": [
+          {"name": "category", "in": "query", "required": true, "schema": {"type": "string"}},
+          {"name": "Authorization", "in": "header", "schema": {"type": "string"}}
+        ],
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/highRisk/pregnant/assess/getAll": {
+      "post": {
+        "tags": ["High Risk"],
+        "operationId": "getAllPregnantAssessByUserId",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GetBenRequestHandler"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/highRisk/pregnant/assess/saveAll": {
+      "post": {
+        "tags": ["High Risk"],
+        "operationId": "saveAllPregnantAssessByUserId",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/GenericObject"}}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/highRisk/pregnant/track/getAll": {
+      "post": {
+        "tags": ["High Risk"],
+        "operationId": "getAllPregnantTrackByUserId",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GetBenRequestHandler"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/highRisk/pregnant/track/saveAll": {
+      "post": {
+        "tags": ["High Risk"],
+        "operationId": "saveAllPregnantTrackByUserId",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/GenericObject"}}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/highRisk/nonPregnant/assess/getAll": {
+      "post": {
+        "tags": ["High Risk"],
+        "operationId": "getAllNonPregnantAssessByUserId",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GetBenRequestHandler"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/highRisk/nonPregnant/assess/saveAll": {
+      "post": {
+        "tags": ["High Risk"],
+        "operationId": "saveAllNonPregnantAssessByUserId",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/GenericObject"}}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/highRisk/nonPregnant/track/getAll": {
+      "post": {
+        "tags": ["High Risk"],
+        "operationId": "getAllNonPregnantTrackByUserId",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GetBenRequestHandler"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/highRisk/nonPregnant/track/saveAll": {
+      "post": {
+        "tags": ["High Risk"],
+        "operationId": "saveAllNonPregnantTrackByUserId",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/GenericObject"}}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/tb/screening/getAll": {
+      "post": {
+        "tags": ["TB"],
+        "operationId": "getAllScreeningByUserId",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GetBenRequestHandler"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/tb/screening/saveAll": {
+      "post": {
+        "tags": ["TB"],
+        "operationId": "saveAllScreeningByUserId",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GenericObject"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/tb/suspected/getAll": {
+      "post": {
+        "tags": ["TB"],
+        "operationId": "getAllSuspectedByUserId",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GetBenRequestHandler"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/tb/suspected/saveAll": {
+      "post": {
+        "tags": ["TB"],
+        "operationId": "saveAllSuspectedByUserId",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GenericObject"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/death-reports/cdr/saveAll": {
+      "post": {
+        "tags": ["Death Reports"],
+        "operationId": "saveCdrRecords",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/GenericObject"}}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/death-reports/cdr/getAll": {
+      "post": {
+        "tags": ["Death Reports"],
+        "operationId": "getCdrRecords",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GetBenRequestHandler"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/death-reports/mdsr/saveAll": {
+      "post": {
+        "tags": ["Death Reports"],
+        "operationId": "saveMdsrRecords",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/GenericObject"}}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/death-reports/mdsr/getAll": {
+      "post": {
+        "tags": ["Death Reports"],
+        "operationId": "getMdsrRecords",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GetBenRequestHandler"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/incentive/masterData/saveAll": {
+      "post": {
+        "tags": ["Incentive"],
+        "operationId": "saveIncentiveMasterData",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/IncentiveActivityDTO"}}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/incentive/masterData/getAll": {
+      "post": {
+        "tags": ["Incentive"],
+        "operationId": "getIncentiveMasterData",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/IncentiveRequestDTO"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/incentive/fetchUserData": {
+      "post": {
+        "tags": ["Incentive"],
+        "operationId": "getAllIncentivesByUserId",
+        "parameters": [{"name": "Authorization", "in": "header", "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/GetBenRequestHandler"}}}},
+        "responses": {"200": {"description": "OK", "content": {"application/json": {"schema": {"type": "string"}}}}}
+      }
+    },
+    "/user/getUserDetail": {
+      "get": {
+        "tags": ["User"],
+        "operationId": "getUserDetail",
+        "parameters": [
+          {"name": "userId", "in": "query", "required": true, "schema": {"type": "integer", "format": "int32"}},
+          {"name": "Authorization", "in": "header", "schema": {"type": "string"}}
+        ],
+        "responses": {
+          "202": {"description": "Accepted", "content": {"application/json": {"schema": {"type": "object", "additionalProperties": true}}}},
+          "500": {"description": "Internal Server Error", "content": {"application/json": {"schema": {"type": "object", "additionalProperties": true}}}}
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {"type": "http", "scheme": "bearer"}
+    },
+    "schemas": {
+      "GenericObject": {"type": "object", "additionalProperties": true},
+      "GetBenRequestHandler": {
+        "type": "object",
+        "properties": {
+          "ashaId": {"type": "integer", "format": "int32"},
+          "fromDate": {"type": "string", "format": "date-time"},
+          "toDate": {"type": "string", "format": "date-time"},
+          "userName": {"type": "string"},
+          "pageNo": {"type": "integer", "format": "int32"}
+        },
+        "additionalProperties": true
+      },
+      "EligibleCoupleDTO": {"type": "object", "additionalProperties": true},
+      "EligibleCoupleTrackingDTO": {"type": "object", "additionalProperties": true},
+      "CbacDTO": {"type": "object", "additionalProperties": true},
+      "PregnantWomanDTO": {"type": "object", "additionalProperties": true},
+      "IncentiveActivityDTO": {"type": "object", "additionalProperties": true},
+      "IncentiveRequestDTO": {
+        "type": "object",
+        "properties": {
+          "state": {"type": "integer", "format": "int32"},
+          "district": {"type": "integer", "format": "int32"}
+        },
+        "additionalProperties": true
+      }
+    }
+  }
+}

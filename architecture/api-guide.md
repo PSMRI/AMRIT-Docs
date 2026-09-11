@@ -7,6 +7,7 @@ Welcome to the AMRIT API Guide. This page provides an overview of the various AP
 * [Common API](https://psmri.github.io/AMRIT-Docs/swagger/?spec=common-api)
 * [Ecd API](https://psmri.github.io/AMRIT-Docs/swagger/?spec=ecd-api)
 * [FHIR API](https://psmri.github.io/AMRIT-Docs/swagger/?spec=fhir-api)
+* [FLW API](https://psmri.github.io/AMRIT-Docs/swagger/?spec=flw-api)
 * [Helpline 104 API](https://psmri.github.io/AMRIT-Docs/swagger/?spec=helpline104-api)
 * [Helpline 1097 API](https://psmri.github.io/AMRIT-Docs/swagger/?spec=helpline1097-api)
 * [Health and Wellness Centre API](https://psmri.github.io/AMRIT-Docs/swagger/?spec=hwc-api)
