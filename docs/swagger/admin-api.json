@@ -1259,6 +1259,46 @@
         }
       }
     },
+    "/username/renameUsername": {
+      "post": {
+        "tags": [
+          "username-rename-controller"
+        ],
+        "summary": "Rename a username and repoint its audit records",
+        "operationId": "renameUsername",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsernameRenameRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/userRoleMappings": {
       "post": {
         "tags": [
@@ -16430,6 +16470,185 @@
         }
       }
     },
+    "/nikshay/location/villages": {
+      "get": {
+        "tags": [
+          "nikshay-location-controller"
+        ],
+        "summary": "Get Nikshay villages for one or more Nikshay facilities (comma-separated facilityIDs)",
+        "operationId": "getVillages_1",
+        "parameters": [
+          {
+            "name": "facilityIDs",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/nikshay/location/userMapping": {
+      "get": {
+        "tags": [
+          "nikshay-location-controller"
+        ],
+        "summary": "Get the Nikshay DistrictID/TUID/FacilityID saved on a Stop TB user-role mapping row, by USRMappingID. Reads m_userservicerolemapping directly (NOT the shared v_userservicerolemapping view, which does not expose these Stop TB-only columns), so the view and every other service line reading it are untouched.",
+        "operationId": "getUserMappingNikshayData",
+        "parameters": [
+          {
+            "name": "usrMappingID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/nikshay/location/tus": {
+      "get": {
+        "tags": [
+          "nikshay-location-controller"
+        ],
+        "summary": "Get Nikshay TUs for a district",
+        "operationId": "getTUs",
+        "parameters": [
+          {
+            "name": "districtID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/nikshay/location/states": {
+      "get": {
+        "tags": [
+          "nikshay-location-controller"
+        ],
+        "summary": "Get all Nikshay states",
+        "operationId": "getStates",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/nikshay/location/facilities": {
+      "get": {
+        "tags": [
+          "nikshay-location-controller"
+        ],
+        "summary": "Get Nikshay facilities for one or more TUs (comma-separated tuIDs)",
+        "operationId": "getFacilities",
+        "parameters": [
+          {
+            "name": "tuIDs",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/nikshay/location/districts": {
+      "get": {
+        "tags": [
+          "nikshay-location-controller"
+        ],
+        "summary": "Get Nikshay districts for a Nikshay state",
+        "operationId": "getDistricts",
+        "parameters": [
+          {
+            "name": "stateID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/labModule/fetchprocCompMappingDelFalse/{psmID}": {
       "get": {
         "tags": [
@@ -16715,7 +16934,7 @@
           "503": {
             "description": "One or more critical services are DOWN",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "additionalProperties": {
@@ -16728,7 +16947,7 @@
           "200": {
             "description": "Services are UP or DEGRADED (operational with warnings)",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "additionalProperties": {
@@ -18109,6 +18328,27 @@
           "lastModDate": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "UsernameRenameRequest": {
+        "type": "object",
+        "properties": {
+          "userID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "oldUserName": {
+            "type": "string"
+          },
+          "newUserName": {
+            "type": "string"
+          },
+          "newEmployeeId": {
+            "type": "string"
+          },
+          "updateContactFields": {
+            "type": "boolean"
           }
         }
       },
