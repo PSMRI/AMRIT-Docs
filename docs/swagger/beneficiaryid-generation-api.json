@@ -973,7 +973,7 @@
         }
       }
     },
-    "/beneficiaryIds/search/getBenIDGenerated": {
+    "/beneficiaryIds/search/getBenIDGeneratedForRequest": {
       "get": {
         "tags": [
           "beneficiary-id-search-controller"
@@ -989,11 +989,22 @@
             }
           },
           {
-            "name": "num",
+            "name": "createdFrom",
             "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int64"
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "beneficiaryIds",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
             }
           }
         ],
@@ -1678,16 +1689,30 @@
           }
         }
       },
-      "CollectionModelEntityModelBeneficiaryId": {
+      "EntityModelUser": {
+        "type": "object",
+        "properties": {
+          "userName": {
+            "type": "string"
+          },
+          "deleted": {
+            "type": "boolean"
+          },
+          "_links": {
+            "$ref": "#/components/schemas/Links"
+          }
+        }
+      },
+      "CollectionModelEntityModelUser": {
         "type": "object",
         "properties": {
           "_embedded": {
             "type": "object",
             "properties": {
-              "beneficiaryIds": {
+              "users": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/EntityModelBeneficiaryId"
+                  "$ref": "#/components/schemas/EntityModelUser"
                 }
               }
             }
@@ -1782,33 +1807,19 @@
           }
         }
       },
-      "CollectionModelEntityModelUser": {
+      "CollectionModelEntityModelBeneficiaryId": {
         "type": "object",
         "properties": {
           "_embedded": {
             "type": "object",
             "properties": {
-              "users": {
+              "beneficiaryIds": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/EntityModelUser"
+                  "$ref": "#/components/schemas/EntityModelBeneficiaryId"
                 }
               }
             }
-          },
-          "_links": {
-            "$ref": "#/components/schemas/Links"
-          }
-        }
-      },
-      "EntityModelUser": {
-        "type": "object",
-        "properties": {
-          "userName": {
-            "type": "string"
-          },
-          "deleted": {
-            "type": "boolean"
           },
           "_links": {
             "$ref": "#/components/schemas/Links"
