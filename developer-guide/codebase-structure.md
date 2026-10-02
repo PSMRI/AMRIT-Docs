@@ -118,6 +118,7 @@ AMRIT follows a **loosely coupled architecture**, where each module functions in
 * **UI to API Communication**: Angular applications interact with backend services via REST APIs, using `HttpClient` for communication.
 * **Mobile App to API Communication**: Android apps consume the same APIs used by the UI modules, enabling uniform behavior across platforms.
 * **Shared Components**: Common-UI and Common-API are reusable components shared across multiple modules, ensuring consistency.
+  * **Common-UI note for first-time contributors**: Common-UI is a shared dependency used by many AMRIT UI products and is commonly added as a Git submodule. It should be treated as shared infrastructure rather than as a standalone product application. Before starting a UI repository locally, check whether it depends on Common-UI or other shared components.
 
 ***
 
