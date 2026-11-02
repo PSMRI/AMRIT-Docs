@@ -551,6 +551,46 @@
         }
       }
     },
+    "/villageMapping/updateVillage": {
+      "post": {
+        "tags": [
+          "village-update-controller"
+        ],
+        "summary": "Replace a village on a user's work location mapping and move their beneficiary addresses",
+        "operationId": "updateVillage",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VillageUpdateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/videoConsultation/getmappedUsers/{serviceproviderID}": {
       "post": {
         "tags": [
@@ -16388,6 +16428,129 @@
         }
       }
     },
+    "/stoptb/team/vans": {
+      "get": {
+        "tags": [
+          "stop-tb-team-controller"
+        ],
+        "summary": "Stop TB teams (MMU vans) of a state",
+        "operationId": "getStateTeams",
+        "parameters": [
+          {
+            "name": "stateID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "serviceProviderID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stoptb/team/user": {
+      "get": {
+        "tags": [
+          "stop-tb-team-controller"
+        ],
+        "summary": "A Stop TB user's current team",
+        "operationId": "getUserTeam",
+        "parameters": [
+          {
+            "name": "userID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "providerServiceMapID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stoptb/team/members": {
+      "get": {
+        "tags": [
+          "stop-tb-team-controller"
+        ],
+        "summary": "Members of a Stop TB team",
+        "operationId": "getTeamMembers",
+        "parameters": [
+          {
+            "name": "vanID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "providerServiceMapID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/signature1/{userID}": {
       "get": {
         "tags": [
@@ -17354,6 +17517,39 @@
   },
   "components": {
     "schemas": {
+      "VillageUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "userID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userName": {
+            "type": "string"
+          },
+          "oldVillageID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "oldVillageName": {
+            "type": "string"
+          },
+          "newVillageID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "newVillageName": {
+            "type": "string"
+          },
+          "modifiedBy": {
+            "type": "string"
+          },
+          "uSRMappingID": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
       "M_Designation": {
         "type": "object",
         "properties": {
@@ -18637,6 +18833,14 @@
           },
           "strength": {
             "type": "string"
+          },
+          "minStock": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxStock": {
+            "type": "integer",
+            "format": "int32"
           },
           "uomID": {
             "type": "integer",
